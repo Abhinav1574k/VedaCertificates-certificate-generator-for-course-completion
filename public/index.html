@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Veda Certificate Generator</title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body>
+
+  <div class="page-shell">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+      <div class="brand">
+
+        <div class="brand-icon">
+          <i class="fa-solid fa-award"></i>
+        </div>
+
+        <div>
+
+          <h1>
+            Veda Certificates
+          </h1>
+
+          <span>
+            Course Completion Portal
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="header-badge">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        Verified Certificates
+
+      </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+      <section class="hero">
+
+        <div class="hero-label">
+          COURSE COMPLETION
+        </div>
+
+        <h2>
+          Earn your certificate
+        </h2>
+
+        <p>
+          Complete your course, generate your certificate,
+          and download a professional PDF with a unique
+          verification ID.
+        </p>
+
+      </section>
+
+
+      <div class="dashboard-grid">
+
+        <!-- COURSE CARD -->
+
+        <section class="card course-card">
+
+          <div class="card-heading">
+
+            <div class="card-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div>
+
+              <h3>
+                Course Details
+              </h3>
+
+              <p>
+                Your enrolled course
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="course-info">
+
+            <div class="course-title-row">
+
+              <h2 id="courseTitle">
+                Loading course...
+              </h2>
+
+              <span
+                id="completionBadge"
+                class="badge pending"
+              >
+                In Progress
+              </span>
+
+            </div>
+
+
+            <div class="info-grid">
+
+              <div class="info-item">
+
+                <span>
+                  <i class="fa-regular fa-clock"></i>
+                  Duration
+                </span>
+
+                <strong id="courseDuration">
+                  -
+                </strong>
+
+              </div>
+
+
+              <div class="info-item">
+
+                <span>
+                  <i class="fa-solid fa-user-tie"></i>
+                  Instructor
+                </span>
+
+                <strong id="courseInstructor">
+                  -
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="course-description">
+
+              <i class="fa-solid fa-circle-info"></i>
+
+              <span id="courseDescription">
+                -
+              </span>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- PROFILE -->
+
+        <section class="card profile-card">
+
+          <div class="card-heading">
+
+            <div class="card-icon">
+              <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div>
+
+              <h3>
+                Certificate Recipient
+              </h3>
+
+              <p>
+                Enter the name that should appear
+                on your certificate.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <form
+            id="profileForm"
+            class="profile-form"
+          >
+
+            <label for="nameInput">
+              Full Name
+            </label>
+
+            <div class="input-wrapper">
+
+              <i class="fa-regular fa-user"></i>
+
+              <input
+                id="nameInput"
+                type="text"
+                placeholder="Enter your full name"
+                maxlength="80"
+                autocomplete="name"
+                required
+              >
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="secondary-button"
+            >
+
+              <i class="fa-solid fa-floppy-disk"></i>
+
+              Save Name
+
+            </button>
+
+          </form>
+
+        </section>
+
+
+        <!-- COMPLETION -->
+
+        <section class="card completion-card">
+
+          <div class="completion-header">
+
+            <div>
+
+              <div class="card-icon green">
+                <i class="fa-solid fa-check"></i>
+              </div>
+
+            </div>
+
+            <div>
+
+              <h3>
+                Course Completion
+              </h3>
+
+              <p>
+                Mark the course as completed to
+                unlock certificate generation.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress-container">
+
+            <div class="progress-label">
+
+              <span>
+                Course progress
+              </span>
+
+              <strong id="progressText">
+                0%
+              </strong>
+
+            </div>
+
+            <div class="progress-track">
+
+              <div
+                id="progressBar"
+                class="progress-bar"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <button
+            id="completeButton"
+            class="primary-button"
+          >
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            Complete Course
+
+          </button>
+
+
+          <div
+            id="completedMessage"
+            class="completed-message hidden"
+          >
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <div>
+
+              <strong>
+                Course completed!
+              </strong>
+
+              <span>
+                Your certificate is ready.
+              </span>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- CERTIFICATE -->
+
+        <section class="card certificate-card">
+
+          <div class="card-heading">
+
+            <div class="card-icon gold">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+
+            <div>
+
+              <h3>
+                Your Certificate
+              </h3>
+
+              <p>
+                Download your official completion certificate.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            id="certificateLocked"
+            class="certificate-locked"
+          >
+
+            <i class="fa-solid fa-lock"></i>
+
+            <h4>
+              Certificate Locked
+            </h4>
+
+            <p>
+              Complete the course to generate your certificate.
+            </p>
+
+          </div>
+
+
+          <div
+            id="certificateReady"
+            class="certificate-ready hidden"
+          >
+
+            <div class="certificate-preview">
+
+              <div class="preview-border">
+
+                <i class="fa-solid fa-award"></i>
+
+                <span>
+                  CERTIFICATE
+                </span>
+
+                <strong id="previewName">
+                  -
+                </strong>
+
+                <small>
+                  has successfully completed
+                </small>
+
+                <b id="previewCourse">
+                  -
+                </b>
+
+              </div>
+
+            </div>
+
+
+            <div class="certificate-id">
+
+              <span>
+                Certificate ID
+              </span>
+
+              <strong id="certificateId">
+                -
+              </strong>
+
+            </div>
+
+
+            <button
+              id="downloadButton"
+              class="download-button"
+            >
+
+              <i class="fa-solid fa-download"></i>
+
+              Download PDF Certificate
+
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <!-- VERIFICATION -->
+
+        <section class="card verification-card">
+
+          <div class="card-heading">
+
+            <div class="card-icon blue">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+
+              <h3>
+                Verify Certificate
+              </h3>
+
+              <p>
+                Check whether a certificate ID is valid.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <form
+            id="verifyForm"
+            class="verify-form"
+          >
+
+            <div class="input-wrapper">
+
+              <i class="fa-solid fa-fingerprint"></i>
+
+              <input
+                id="verifyInput"
+                type="text"
+                placeholder="Example: VEDA-2026-ABC123"
+                required
+              >
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="verify-button"
+            >
+
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              Verify
+
+            </button>
+
+          </form>
+
+
+          <div
+            id="verificationResult"
+            class="verification-result hidden"
+          ></div>
+
+        </section>
+
+      </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+      <span>
+        © 2026 Veda Technology
+      </span>
+
+      <span>
+        Secure Certificate Verification
+      </span>
+
+    </footer>
+
+  </div>
+
+
+  <!-- TOAST -->
+
+  <div
+    id="toast"
+    class="toast"
+  >
+
+    <i
+      id="toastIcon"
+      class="fa-solid fa-check"
+    ></i>
+
+    <span id="toastMessage">
+      Success
+    </span>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

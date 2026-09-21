@@ -1,0 +1,25 @@
+{
+  "name": "certificate-generator",
+  "version": "1.0.0",
+  "description": "Dynamic course completion certificate generator with PDF download and verification.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "certificate",
+    "pdf",
+    "course",
+    "completion",
+    "pdf-lib",
+    "nodejs"
+  ],
+  "author": "Abhinav",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "pdf-lib": "^1.17.1"
+  }
+}
